@@ -1,0 +1,145 @@
+@import url("https://fonts.googleapis.com/css2?family=Nunito:wght@900&display=swap");
+@import-normalize;
+
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+  font-family: "Nunito", sans-serif;
+  gap: 5%;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+header {
+  width: 100vw;
+  font-family: "Nunito", sans-serif;
+  display: flex;
+  justify-content: space-around;
+  box-shadow: 0px 4px 32px -12px rgba(0, 0, 0, 0.25);
+  height: 10vh;
+  align-items: center;
+}
+
+header > button {
+  border-radius: 5px;
+  background-color: rgba(233, 236, 239, 1);
+  border: none;
+  color: rgba(91, 97, 102, 1);
+  width: 64px;
+  height: 35px;
+}
+
+main {
+  display: flex;
+  width: 95vw;
+  max-width: 1100px;
+  margin: 0 auto;
+  gap: 5%;
+  flex-wrap: wrap;
+}
+
+.example-img {
+  width: 500px;
+  max-width: 80vw;
+}
+
+.card {
+  width: 500px;
+  max-width: 75vw;
+  display: flex;
+  background-color: rgba(248, 249, 250, 1);
+  border-radius: 5px;
+  justify-content: space-between;
+  padding: 18px;
+  align-items: center;
+}
+
+.desc {
+  color: rgba(33, 37, 41, 1);
+}
+
+.card > div > p {
+  color: rgba(91, 97, 102, 1);
+}
+
+section {
+  font-family: "Nunito", sans-serif;
+  width: 600px;
+  max-width: 80vw;
+  display: flex;
+  flex-direction: column;
+}
+
+.list-header {
+  display: flex;
+  align-items: center;
+}
+
+.no-transactions {
+  color: rgba(91, 97, 102, 1);
+  margin: 4% 0;
+  font-size: 1.4rem;
+}
+
+h2 {
+  font-size: 1.2rem;
+}
+
+ul {
+  display: flex;
+  flex-direction: column;
+  padding: 0;
+  gap: 10px;
+}
+
+.list-transactions {
+  display: flex;
+  flex-direction: column;
+  justify-content: baseline;
+}
+
+.total-price-container {
+  border: solid 1px rgba(233, 236, 239, 1);
+  height: 85px;
+  width: 80%;
+  max-width: 350px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  border-radius: 5px;
+  font-weight: bold;
+}
+
+.price {
+  color: rgba(253, 55, 126, 1);
+}
+
+@media (max-width: 415px) {
+  main {
+    flex-direction: column;
+    align-items: center;
+  }
+}
