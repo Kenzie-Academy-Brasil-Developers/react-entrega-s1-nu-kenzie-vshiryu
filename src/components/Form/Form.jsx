@@ -38,8 +38,8 @@ function Form({
           setTransactionType(event.target.value);
         }}
       >
-        <option>entrada</option>
-        <option>saída</option>
+        <option>Entrada</option>
+        <option>Despesa</option>
       </select>
       <button type="submit" id="send-button">
         Inserir valor

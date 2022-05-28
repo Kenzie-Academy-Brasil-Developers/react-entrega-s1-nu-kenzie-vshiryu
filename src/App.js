@@ -13,7 +13,7 @@ function App() {
   );
   const [description, setDescription] = useState("");
   const [transactionValue, setTransactionValue] = useState("");
-  const [transactionType, setTransactionType] = useState("entrada");
+  const [transactionType, setTransactionType] = useState("Entrada");
   const [total, setTotal] = useState(0);
 
   function newTransaction() {
@@ -42,7 +42,7 @@ function App() {
     setTotal(
       listTransaction.reduce(
         (a, b) =>
-          b.transactionType === "entrada"
+          b.transactionType === "Entrada" || b.transactionType === "entrada" //JSON.stringify remove letras maiúsculas
             ? a + b.transactionValue
             : a - b.transactionValue,
         0
