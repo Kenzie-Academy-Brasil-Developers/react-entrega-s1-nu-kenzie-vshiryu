@@ -37,7 +37,7 @@ function App() {
   useEffect(() => {
     calculateTotal();
     updateStorage();
-  }, []);
+  });
 
   function calculateTotal() {
     setTotal(
