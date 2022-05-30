@@ -13,7 +13,7 @@ function Form({
         event.preventDefault();
         newTransaction();
         event.target.reset();
-        setTransactionType("entrada");
+        setTransactionType("Entrada");
       }}
     >
       <input

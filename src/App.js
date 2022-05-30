@@ -3,6 +3,7 @@ import { useEffect, useState } from "react";
 import Form from "./components/Form/Form.jsx";
 import WelcomePage from "./components/WelcomePage/WelcomePage.jsx";
 import example from "./img/example.png";
+import trash from "./img/trash.png";
 
 function App() {
   const [page, setPage] = useState(false);
@@ -93,7 +94,16 @@ function App() {
                 <ul>
                   {listTransaction.map((elem, index) => (
                     <li key={index} className="card">
-                      <div>
+                      <div
+                        className="transaction-type"
+                        style={{
+                          backgroundColor:
+                            elem.transactionType === "Entrada"
+                              ? "rgb(0, 191, 0)"
+                              : "red",
+                        }}
+                      ></div>
+                      <div className="name-type">
                         <h3 className="desc">{elem.description}</h3>
                         <p>{elem.transactionType}</p>
                       </div>
@@ -103,7 +113,7 @@ function App() {
                           deleteTransaction(elem);
                         }}
                       >
-                        Excluir
+                        <img src={trash} alt="trash" className="trash-img" />
                       </button>
                     </li>
                   ))}
@@ -112,6 +122,7 @@ function App() {
             )}
           </div>
         </section>
+
         <div className="total-price-container">
           <div>Saldo:</div>
           <div className="price">R$ {total}</div>

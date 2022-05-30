@@ -87,7 +87,7 @@ main {
 
 section {
   font-family: "Nunito", sans-serif;
-  width: 600px;
+  width: 550px;
   max-width: 80vw;
   display: flex;
   flex-direction: column;
@@ -96,6 +96,13 @@ section {
 .list-header {
   display: flex;
   align-items: center;
+  justify-content: space-evenly;
+  gap: 5px;
+}
+
+.list-header > button {
+  border-radius: 5px;
+  padding: 7px;
 }
 
 .no-transactions {
@@ -137,9 +144,28 @@ ul {
   color: rgba(253, 55, 126, 1);
 }
 
+.transaction-type {
+  position: relative;
+  width: 5px;
+  height: calc(100% + 36px);
+  border-radius: 5px 0 0 5px;
+  margin: -18px;
+}
+
+.name-type {
+  margin-left: -3%;
+}
+
+button {
+  border: none;
+}
+
 @media (max-width: 415px) {
   main {
     flex-direction: column;
     align-items: center;
+  }
+  .transaction-type {
+    height: 129px;
   }
 }
