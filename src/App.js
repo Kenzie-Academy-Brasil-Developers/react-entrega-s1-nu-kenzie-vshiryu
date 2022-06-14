@@ -12,32 +12,20 @@ function App() {
       ? JSON.parse(localStorage.getItem("transactions"))
       : []
   );
-  const [description, setDescription] = useState("");
-  const [transactionValue, setTransactionValue] = useState("");
-  const [transactionType, setTransactionType] = useState("Entrada");
   const [total, setTotal] = useState(0);
-
-  function newTransaction() {
-    const transaction = {
-      description,
-      transactionValue: Number(transactionValue),
-      transactionType,
-    };
-    setListTransaction([...listTransaction, transaction]);
-  }
 
   function deleteTransaction(item) {
     setListTransaction(listTransaction.filter((elem) => elem !== item));
   }
 
+  useEffect(() => {
+    updateStorage();
+    calculateTotal();
+  }, [listTransaction]);
+
   function updateStorage() {
     localStorage.transactions = JSON.stringify(listTransaction);
   }
-
-  useEffect(() => {
-    calculateTotal();
-    updateStorage();
-  });
 
   function calculateTotal() {
     setTotal(
@@ -67,10 +55,8 @@ function App() {
       </header>
       <main>
         <Form
-          setDescription={setDescription}
-          newTransaction={newTransaction}
-          setTransactionType={setTransactionType}
-          setTransactionValue={setTransactionValue}
+          listTransaction={listTransaction}
+          setListTransaction={setListTransaction}
         />
         <section>
           <div className="list-header">

@@ -1,12 +1,19 @@
 import { useState } from "react";
 import "./Form.css";
 
-function Form({
-  newTransaction,
-  setTransactionType,
-  setDescription,
-  setTransactionValue,
-}) {
+function Form({ listTransaction, setListTransaction }) {
+  const [description, setDescription] = useState("");
+  const [transactionValue, setTransactionValue] = useState("");
+  const [transactionType, setTransactionType] = useState("Entrada");
+
+  function newTransaction() {
+    const transaction = {
+      description,
+      transactionValue: Number(transactionValue),
+      transactionType,
+    };
+    setListTransaction([...listTransaction, transaction]);
+  }
   return (
     <form
       onSubmit={(event) => {

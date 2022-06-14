@@ -158,6 +158,7 @@ ul {
 
 button {
   border: none;
+  cursor: pointer;
 }
 
 @media (max-width: 415px) {
